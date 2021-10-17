@@ -62,7 +62,7 @@ const Modal = ({ isVisible, onClose, header, body, footer }) =>
 								{ header }
 							</HeaderContainer>
 							<CloseButton onClick={ onClose }>
-								<i className='fa fa-close' />
+								<i className='far fa-times' />
 							</CloseButton>
 						</Header>
 						<Body>{ body }</Body>
