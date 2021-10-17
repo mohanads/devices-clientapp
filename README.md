@@ -9,4 +9,4 @@ Paste the following in your command line:
 	npm i
 	npm run start
 
-Afterwards, click [here](https://localhost:8080) to view the App in your browser.
+Afterwards, click [here](http://localhost:8080) to view the App in your browser.
