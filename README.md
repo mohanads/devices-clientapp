@@ -8,6 +8,6 @@ Paste the following in your command line:
 # Running
 After [installation](#Installation), paste the following in your command line:
 
-	npm run dev
+	npm run start
 
 Afterwards, click [here](localhost:8080) to view the App in your browser.
