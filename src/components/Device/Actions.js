@@ -36,7 +36,7 @@ const Actions = ({ openDeleteModal, openEditModal }) =>
 	return (
 		<Dropdown ref={ dropdownRef }>
 			<Container>
-				<EditButton onClick={ onEditClick }>Edit</EditButton>
+				<EditButton onClick={ onEditClick }>Update</EditButton>
 				<DeleteButton onClick={ onDeleteClick }>Delete</DeleteButton>
 			</Container>
 		</Dropdown>

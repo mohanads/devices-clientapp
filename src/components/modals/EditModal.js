@@ -38,7 +38,7 @@ const Header = () =>
 {
 	return (
 		<Title>
-			Edit Device
+			Update Device
 		</Title>
 	);
 };
@@ -62,7 +62,7 @@ const Body = ({ systemName, type, hddCapacity, typeOptions, changeSystemName, ch
 const Footer = () =>
 {
 	return (
-		<EditButton type='submit' form='editModalForm'>Edit</EditButton>
+		<EditButton type='submit' form='editModalForm'>Update</EditButton>
 	);
 };
 
