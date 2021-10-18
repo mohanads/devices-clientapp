@@ -1,5 +1,5 @@
 # Demo
-Click [here](https://tender-mccarthy-a260d4.netlify.app) for a demo without having to install.
+Click <a href="https://tender-mccarthy-a260d4.netlify.app" target="_blank">Here</a> for a demo without having to install.
 
 # Installation
 Paste the following in your command line:
@@ -9,4 +9,4 @@ Paste the following in your command line:
 	npm i
 	npm run start
 
-Afterwards, click [here](http://localhost:8080) to view the App in your browser.
+Afterwards, click <a href="http://localhost:8080" target="_blank">Here</a> to view the App in your browser.

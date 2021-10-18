@@ -46,7 +46,7 @@ const Body = ({ systemName }) =>
 {
 	return (
 		<BodyContainer>
-			<div>Please re-confirm deleting "{ systemName }".</div>
+			<div>Please confirm deleting "{ systemName }".</div>
 			<div>This cannot be undone.</div>
 		</BodyContainer>
 	);
