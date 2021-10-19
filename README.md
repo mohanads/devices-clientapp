@@ -8,13 +8,6 @@ Paste the following in your command line:
 
 Afterwards, click <a href="http://localhost:8080" target="_blank">Here</a> to view the App in your browser.
 
-# Components
-## `Device`
-The individual Device displayed in the Devices list.
-#### `Actions`
-The view for actions that can be launched from a Device.  
-In the current implementation, this is a Dropdown containing the "Update" and "Delete" actions.
-
 # Looking Forward
 Things I would adjust with more time:
 1. ### Rapid Click Prevention
