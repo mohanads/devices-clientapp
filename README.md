@@ -1,3 +1,6 @@
+# Pre-requisite
+You must install [this app](https://github.com/NinjaRMM/devicesTask_serverApp), and have it running when you run this client.
+
 # Installation
 Paste the following in your command line:
 
