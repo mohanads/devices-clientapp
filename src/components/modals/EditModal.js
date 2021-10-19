@@ -29,9 +29,9 @@ const EditButton = styled(Button)`
  */
 const typeOptions =
 [
-	{ label: 'Mac', 				value: 'Mac' },
-	{ label: 'Windows Workstation', value: 'Windows Workstation' },
-	{ label: 'Windows Server', 		value: 'Windows Server' }
+	{ label: 'Mac', 				value: 'MAC' },
+	{ label: 'Windows Workstation', value: 'WINDOWS_WORKSTATION' },
+	{ label: 'Windows Server', 		value: 'WINDOWS_SERVER' }
 ]
 
 const Header = () =>

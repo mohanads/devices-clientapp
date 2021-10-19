@@ -6,6 +6,10 @@ import { motion } 		from 'framer-motion';
 import MachineType 		from './MachineType';
 import OperatingSystem 	from './OperatingSystem';
 
+const WORKSTATION_TYPE 	= 'Workstation';
+const SERVER_TYPE 		= 'Server';
+const DEFAULT_TYPE 		= WORKSTATION_TYPE;
+
 const operatingSystemMap =
 {
 	'Mac': 		'macOS',
@@ -21,10 +25,12 @@ const operatingSystemMap =
 const getOperatingSystem = (type) =>
 {
 	if (type == null) return null;
+	
+	const _type = type.toLowerCase();
 
 	for (let abstractType in operatingSystemMap)
 	{
-		if (type.indexOf(abstractType) !== -1)
+		if (_type.indexOf(abstractType.toLowerCase()) !== -1)
 			return operatingSystemMap[abstractType]
 	}
 	return 'Windows';
@@ -40,9 +46,11 @@ const getMachineType = (type) =>
 {
 	if (type == null) return null;
 
-	if (type.indexOf('Workstation') !== -1) return 'Workstation';
-	else if (type.indexOf('Server') !== -1) return 'Server';
-	else return 'Workstation';
+	const _type = type.toLowerCase();
+
+	if (_type.indexOf('workstation') !== -1) return WORKSTATION_TYPE;
+	else if (_type.indexOf('server') !== -1) return SERVER_TYPE;
+	else return DEFAULT_TYPE;
 };
 
 const Wrapper = styled(motion.div)`

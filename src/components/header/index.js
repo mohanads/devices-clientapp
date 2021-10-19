@@ -23,7 +23,7 @@ const SortFilterContainer = styled(Container)`
 	flex-wrap: 				wrap;
 `;
 const Title = styled.h3`
-	margin-bottom: 	0;
+	margin-bottom: 			0;
 `;
 
 const Header = ({ openAddModal, sortingBy, changeSortingBy, filter, changeFilter }) =>

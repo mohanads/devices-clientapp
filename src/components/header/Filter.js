@@ -20,9 +20,9 @@ const Filter = ({ filter, changeFilter }) =>
 	const filters =
 	[
 		{ value: 'All Devices', 		label: 'All Devices' },
-		{ value: 'Mac', 				label: 'Mac' },
-		{ value: 'Windows Server', 		label: 'Windows Server' },
-		{ value: 'Windows Workstation', label: 'Windows Workstation' },
+		{ value: 'MAC', 				label: 'Mac' },
+		{ value: 'WINDOWS_SERVER', 		label: 'Windows Server' },
+		{ value: 'WINDOWS_WORKSTATION', label: 'Windows Workstation' },
 	]
 
 	const onChange = (e) => { changeFilter(e.target.value) }
