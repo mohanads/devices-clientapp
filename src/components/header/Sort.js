@@ -16,8 +16,8 @@ const Sort = ({ sortingBy, changeSortingBy }) =>
 {
 	const sortableProperties =
 	[
-		{ label: 'System Name', 	value: 'systemName' },
-		{ label: 'HDD Capacity', 	value: 'hddCapacity' }
+		{ label: 'System Name', 	value: 'system_name' },
+		{ label: 'HDD Capacity', 	value: 'hdd_capacity' }
 	]
 
 	const onChange = (e) => { changeSortingBy(e.target.value) }

@@ -5,7 +5,7 @@ import AddModal 			from './modals/AddModal';
 import DeleteModal 			from './modals/DeleteModal';
 import Devices 				from './Devices';
 import Header 				from './header';
-import * as DeviceManager 	from '../deviceManager';
+import * as DeviceManager 	from '../DeviceManager';
 
 const Wrapper = styled.div`
 	min-height: 			100vh;
@@ -28,8 +28,8 @@ const Container = styled.div.attrs(() => { return { className: 'container' } })`
 
 const App = () =>
 {
-	const [ allDevices, 	setAllDevices 		] = React.useState(DeviceManager.getDevices());
-	const [ sortingBy, 		setSortingBy 		] = React.useState('systemName');
+	const [ allDevices, 	setAllDevices 		] = React.useState([]);
+	const [ sortingBy, 		setSortingBy 		] = React.useState('system_name');
 	const [ filter, 		setFilter 			] = React.useState('All Devices');
 	const [ isEditing, 		setIsEditing 		] = React.useState(false);
 	const [ isAdding, 		setIsAdding 		] = React.useState(false);
@@ -41,20 +41,42 @@ const App = () =>
 	const closeEditModal 	= () => { setIsEditing(false); setEditingDevice(null); }
 	const closeDeleteModal 	= () => { setIsDeleting(false); setDeletingDevice(null); }
 	const openAddModal 		= () => { setIsAdding(true) }
-	const addDevice = (device) =>
+	
+	const addDevice = async (device) =>
 	{
 		closeAddModal();
-		setAllDevices(DeviceManager.addDevice(allDevices, device))
+		const addedDevice = await DeviceManager.addDevice(device)
+		setAllDevices(allDevices => [ ...allDevices, addedDevice ])
 	}
-	const editDevice = (device) =>
+	const editDevice = async (device) =>
 	{
 		closeEditModal();
-		setAllDevices(DeviceManager.editDevice(allDevices, device))
+		const isEdited = await DeviceManager.editDevice(device);
+		
+		if (!isEdited) return;
+
+		const index = allDevices.findIndex(_device => _device.id === device.id);
+
+		if (index === -1) return;
+
+		const _allDevices = allDevices.slice();
+		_allDevices.splice(index, 1, { ...device });
+		setAllDevices(_allDevices);
 	}
-	const deleteDevice = (id) =>
+	const deleteDevice = async (id) =>
 	{
 		closeDeleteModal();
-		setAllDevices(DeviceManager.deleteDevice(allDevices, id))
+		const isDeleted = DeviceManager.deleteDevice(id);
+		
+		if (!isDeleted) return;
+
+		const index = allDevices.findIndex(device => device.id === id);
+		
+		if (index === -1) return;
+		
+		const _allDevices = allDevices.slice();
+		_allDevices.splice(index, 1);
+		setAllDevices(_allDevices);
 	}
 	const openEditModal = (id) =>
 	{
@@ -68,6 +90,8 @@ const App = () =>
 	}
 	const getFilteredSortedDevices = () =>
 	{
+		if (!allDevices || allDevices.length === 0) return []
+
 		let filteredDevices = []
 
 		if (filter === 'All Devices') filteredDevices = allDevices
@@ -84,6 +108,15 @@ const App = () =>
 
 		return sortedDevices
 	}
+	const initializeAllDevices = async () =>
+	{
+		setAllDevices(await DeviceManager.getDevices());
+	}
+
+	React.useEffect(() =>
+	{
+		initializeAllDevices();
+	}, [])
 
 	return (
 		<Wrapper>

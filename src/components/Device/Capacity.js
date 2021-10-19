@@ -3,10 +3,10 @@ import styled 	from 'styled-components';
 
 const Wrapper = styled.div``;
 
-const Capacity = ({ hddCapacity }) =>
+const Capacity = ({ hdd_capacity }) =>
 {
 	return (
-		<Wrapper>{ hddCapacity } GB</Wrapper>
+		<Wrapper>{ hdd_capacity } GB</Wrapper>
 	);
 };
 

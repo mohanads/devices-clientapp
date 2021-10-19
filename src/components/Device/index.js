@@ -75,23 +75,21 @@ const Metadata = styled.div`
 	color: 					hsl(0, 0%, 50%);
 `;
 
-const Device = ({ id, systemName, type, hddCapacity, openDeleteModal, openEditModal }) =>
+const Device = ({ id, system_name, type, hdd_capacity, openDeleteModal, openEditModal }) =>
 {
 	const operatingSystem 	= getOperatingSystem(type);
 	const machineType 		= getMachineType(type);
 
-	console.log(type);
-
 	return (
 		<Wrapper layout='position' key={ id } initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 			<Header>
-				<Name>{ systemName }</Name>
+				<Name>{ system_name }</Name>
 				<Actions openDeleteModal={ () => { openDeleteModal(id) } } openEditModal={ () => { openEditModal(id) } } />
 			</Header>
 			<Metadata>
 				<OperatingSystem operatingSystem={ operatingSystem } />
 				<MachineType machineType={ machineType } />
-				<Capacity hddCapacity={ hddCapacity } />
+				<Capacity hdd_capacity={ hdd_capacity } />
 			</Metadata>
 		</Wrapper>
 	);

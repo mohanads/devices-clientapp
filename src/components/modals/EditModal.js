@@ -43,18 +43,18 @@ const Header = () =>
 	);
 };
 
-const Body = ({ systemName, type, hddCapacity, typeOptions, changeSystemName, changeType, changeHDDCapacity, editDevice }) =>
+const Body = ({ system_name, type, hdd_capacity, typeOptions, changeSystemName, changeType, changeHDDCapacity, editDevice }) =>
 {
 	const onSubmit = (e) => { e.preventDefault(); editDevice(); }
 
 	return (
 		<Form id='editModalForm' onSubmit={ onSubmit }>
 			<Label>System Name</Label>
-			<Input required value={ systemName } onChange={ changeSystemName }></Input>
+			<Input required value={ system_name } onChange={ changeSystemName }></Input>
 			<Label>Type</Label>
 			<Select required options={ typeOptions } onChange={ changeType } value={ type }></Select>
 			<Label>HDD Capacity</Label>
-			<Input type='number' min='1' required value={ hddCapacity} onChange={ changeHDDCapacity }></Input>
+			<Input type='number' min='1' required value={ hdd_capacity } onChange={ changeHDDCapacity }></Input>
 		</Form>
 	);
 };
@@ -68,26 +68,37 @@ const Footer = () =>
 
 const EditModal = ({ device, isVisible, closeEditModal, editDevice }) =>
 {
-	const [ systemName, 	setSystemName 	] = React.useState('');
+	const [ system_name, 	setSystemName 	] = React.useState('');
 	const [ type, 			setType 		] = React.useState('Mac');
-	const [ hddCapacity, 	setHDDCapacity 	] = React.useState(1);
+	const [ hdd_capacity, 	setHDDCapacity 	] = React.useState(1);
 
 	const changeSystemName 	= (e) => { setSystemName(e.target.value) }
 	const changeType 		= (e) => { setType(e.target.value) }
 	const changeHDDCapacity = (e) => { setHDDCapacity(e.target.value) }
-	const _editDevice 		= () => { editDevice({ id: device.id, systemName, type, hddCapacity }) }
+	
+	const resetInputs = () =>
+	{
+		setSystemName('');
+		setType('Mac');
+		setHDDCapacity(1);
+	}
+	const _editDevice = () =>
+	{
+		editDevice({ id: device.id, system_name, type, hdd_capacity })
+		resetInputs();
+	}
 
 	React.useEffect(() =>
 	{
 		if (!device) return
 		
-		setSystemName(device.systemName)
+		setSystemName(device.system_name)
 		setType(device.type)
-		setHDDCapacity(device.hddCapacity)
+		setHDDCapacity(device.hdd_capacity)
 	}, [device])
 
 	const header 	= <Header />
-	const body 		= <Body systemName={ systemName } typeOptions={ typeOptions } type={ type } hddCapacity={ hddCapacity } changeSystemName={ changeSystemName } changeType={ changeType } changeHDDCapacity={ changeHDDCapacity } editDevice={ _editDevice } />
+	const body 		= <Body system_name={ system_name } typeOptions={ typeOptions } type={ type } hdd_capacity={ hdd_capacity } changeSystemName={ changeSystemName } changeType={ changeType } changeHDDCapacity={ changeHDDCapacity } editDevice={ _editDevice } />
 	const footer 	= <Footer />
 
 	return (

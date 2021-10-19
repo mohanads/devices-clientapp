@@ -45,6 +45,11 @@ const GlobalStyle = createGlobalStyle`
 		color: 					hsl(0, 0%, 25%);
 		background-color: 		var(--dca-background-color_secondary);
 	}
+
+	[data-tippy-root]
+	{
+		z-index: 				1 !important;
+	}
 `;
 
 const Wrapper = (

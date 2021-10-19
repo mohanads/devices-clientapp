@@ -42,11 +42,11 @@ const Header = () =>
 	);
 };
 
-const Body = ({ systemName }) =>
+const Body = ({ system_name }) =>
 {
 	return (
 		<BodyContainer>
-			<div>Please confirm deleting "{ systemName }".</div>
+			<div>Please confirm deleting "{ system_name }".</div>
 			<div>This cannot be undone.</div>
 		</BodyContainer>
 	);
@@ -64,16 +64,16 @@ const Footer = ({ deleteDevice, closeDeleteModal }) =>
 
 const DeleteModal = ({ device, isVisible, closeDeleteModal, deleteDevice }) =>
 {
-	const [ systemName, setSystemName ] = React.useState('');
+	const [ system_name, setSystemName ] = React.useState('');
 
 	const _deleteDevice = () => { deleteDevice(device.id) }
 
 	const header 	= <Header />
-	const body 		= <Body systemName={ systemName } />
+	const body 		= <Body system_name={ system_name } />
 	const footer 	= <Footer deleteDevice={ _deleteDevice } closeDeleteModal={ closeDeleteModal } />
 
 	/**
-	 * I want to set the systemName on load, because otherwise,
+	 * I want to set the system_name on load, because otherwise,
 	 * when the user clicks Delete or closes the modal, the UI will
 	 * shift unexpectedly.
 	 */
@@ -81,7 +81,7 @@ const DeleteModal = ({ device, isVisible, closeDeleteModal, deleteDevice }) =>
 	{
 		if (!device) return
 
-		setSystemName(device.systemName);
+		setSystemName(device.system_name);
 	}, [ device ])
 
 	return (

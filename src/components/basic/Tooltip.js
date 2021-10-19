@@ -19,7 +19,7 @@ const CustomTippy = styled(Tippy)`
 export default function Tooltip ({ content, children })
 {
 	return (
-		<CustomTippy content={ content } delay={ [ 200, null ] } hideOnClick={ false }>
+		<CustomTippy content={ content } hideOnClick={ false }>
 			{ children }
 		</CustomTippy>
 	)

@@ -11,7 +11,7 @@ const CustomTippy = styled(Tippy)`
 	min-width: 				125px;
 	background-color: 		var(--dca-background-color_primary);
 	border-radius: 			var(--dca-border-radius_default);
-
+	
 	.tippy-content
 	{
 		padding: 			0;

@@ -11,16 +11,23 @@ Paste the following in your command line:
 
 Afterwards, click <a href="http://localhost:8080" target="_blank">Here</a> to view the App in your browser.
 
+# Components
+## `Device`
+The individual Device displayed in the Devices list.
+#### `Actions`
+The view for actions that can be launched from a Device.  
+In the current implementation, this is a Dropdown containing the "Update" and "Delete" actions.
+
 # Looking Forward
 Things I would adjust with more time:
-1. ### Rapid Click Prevention  
+1. ### Rapid Click Prevention
 	Handling rapid clicking on actions such as “Add” in the “Add Device”. Currently, if you’re fast enough, you can probably double click “Add” to add the same product twice.
 2. ### Error Handling
-	I would add more error handling across the whole app. Especially during loading and action submission.   
-    For example, error handling when a user “Adds” a Device. Currently, the modal is immediately closed and we attempt to add the product without any checks (except for standard HTML “required” attributes and such).
+	I would add more error handling across the whole app. Especially during loading and action submission.  
+	For example, error handling when a user “Adds” a Device. Currently, the modal is immediately closed and we attempt to add the product without any checks (except for standard HTML “required” attributes and such).
 3. ### Remove Duplicate Code
 	Extract duplicate code into components/functions. I duplicated some code to save some time.  
-    Example: Sort and Filter components.
+	Example: Sort and Filter components.
 4. ### Dynamic Dropdowns
 	No hard-coding dropdown options. Anything that should be dynamic, I would make dynamic.
 5. ### z-index Handling
@@ -34,5 +41,7 @@ Things I would adjust with more time:
 9. ### Lazy-Loading/Infinite-Loading
 	Instead of loading ALL devices at once, I would render a fixed amount, and keep loading more when the user scrolls to the bottom.
 10. ### Refine Animations
-	Some animations need refinement.
+	Some animations need refinement.  
 	For example, when you apply a filter that filters all Devices and there is nothing left to display, the "No devices available." message gets jerked.
+11. ### Component Loading States/Skeletons
+	I would add loading indicators to components. Preferably using Skeleton Loaders where possible.

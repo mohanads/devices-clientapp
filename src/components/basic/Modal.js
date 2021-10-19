@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Wrapper = styled(motion.div)`
 	min-width: 				250px;
 	min-height: 			250px;
+	z-index: 				3;
 	box-shadow: 			0 0 20px 0 rgb(0 0 0 / 15%);
 	overflow: 				hidden;
 	display: 				grid;

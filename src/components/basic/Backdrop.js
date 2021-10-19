@@ -3,7 +3,7 @@ import styled 		from 'styled-components';
 import { motion } 	from 'framer-motion';
 
 const Wrapper = styled(motion.div)`
-	z-index: 			1;
+	z-index: 			2;
 	padding: 			1rem;
 	top: 				0;
 	right: 				0;

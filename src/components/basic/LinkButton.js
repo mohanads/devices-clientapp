@@ -3,7 +3,7 @@ import styled 	from 'styled-components';
 import Button 	from './Button';
 
 const CustomButton = styled(Button)`
-	padding: 					0rem;
+	padding: 					0;
 	border-radius: 				0;
 	box-shadow: 				none;
 	transform: 					none;
