@@ -1,6 +1,3 @@
-# Demo
-Click <a href="https://tender-mccarthy-a260d4.netlify.app" target="_blank">Here</a> for a demo without having to install.
-
 # Installation
 Paste the following in your command line:
 
