@@ -1,10 +1,9 @@
-import React 		from 'react';
-import styled 		from 'styled-components';
-import Button 		from '../basic/Button';
-import Modal 		from '../basic/Modal';
-import Input 		from '../basic/Input';
-import Select 		from '../basic/Select';
-import { AnimatePresence } from 'framer-motion';
+import React 	from 'react';
+import styled 	from 'styled-components';
+import Button 	from '../basic/Button';
+import Modal 	from '../basic/Modal';
+import Input 	from '../basic/Input';
+import Select 	from '../basic/Select';
 
 const Title = styled.h5`
 	margin-bottom: 	0;
@@ -70,7 +69,7 @@ const Footer = () =>
 const AddModal = ({ isVisible, closeAddModal, addDevice }) =>
 {
 	const [ system_name, 	setSystemName 	] = React.useState('');
-	const [ type, 			setType 		] = React.useState('Mac');
+	const [ type, 			setType 		] = React.useState('MAC');
 	const [ hdd_capacity, 	setHDDCapacity 	] = React.useState(1);
 
 	const changeSystemName 	= (e) => { setSystemName(e.target.value) }
@@ -80,7 +79,7 @@ const AddModal = ({ isVisible, closeAddModal, addDevice }) =>
 	const resetInputs = () =>
 	{
 		setSystemName('');
-		setType('Mac');
+		setType('MAC');
 		setHDDCapacity(1);
 	}
 	const _addDevice = () =>

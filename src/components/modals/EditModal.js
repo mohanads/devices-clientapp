@@ -69,7 +69,7 @@ const Footer = () =>
 const EditModal = ({ device, isVisible, closeEditModal, editDevice }) =>
 {
 	const [ system_name, 	setSystemName 	] = React.useState('');
-	const [ type, 			setType 		] = React.useState('Mac');
+	const [ type, 			setType 		] = React.useState('MAC');
 	const [ hdd_capacity, 	setHDDCapacity 	] = React.useState(1);
 
 	const changeSystemName 	= (e) => { setSystemName(e.target.value) }
@@ -79,7 +79,7 @@ const EditModal = ({ device, isVisible, closeEditModal, editDevice }) =>
 	const resetInputs = () =>
 	{
 		setSystemName('');
-		setType('Mac');
+		setType('MAC');
 		setHDDCapacity(1);
 	}
 	const _editDevice = () =>
