@@ -8,11 +8,6 @@ const Wrapper = styled.div`
 	display: 					grid;
 	grid-auto-rows: 			max-content;
 	grid-template-columns: 		repeat(auto-fit, minmax(300px, 1fr));
-
-	@media (max-width: 576px)
-	{
-		grid-template-columns: 	1fr;
-	}
 `;
 const Empty = styled.div`
 	row-gap: 				1rem;
